@@ -1,0 +1,18 @@
+*En este ejemplo vamos a tener un input y un boton pero esta vez al hacer click vamos a seleccionar el texto y lo vamos a cortar al portapapeles.
+
+*Creamos la funcion const handleCopy = () =>{} la cual se va a encargar de copiar nuestro texto, pero antes de esto necesitamos enlazar nuestro el estado Text con nuestro input 
+     <input type="text" value={text} onChange={(e) => setText(e.target.value)}/>
+
+     Con esto ya deberian estar enlazados 
+
+*¿como hacemos para realizar la copia?....cada vez que nesecitamos realizar un evento del DOM que no podemos controlar con React utilizamos una referencia (useRef)
+
+    import React, { useState, useRef } from 'react'
+
+    function CopyApp() {
+        const [text, setText] = useState("Holaa!");
+        const inputRef = useRef();
+
+*Ahora enlazamos esta referencia con el input, la asignamos al atributo ref :
+        <input ref={inputRef} type="text" value={text} onChange={(e) => setText(e.target.value)}/>
+

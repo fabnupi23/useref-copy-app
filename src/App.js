@@ -1,11 +1,10 @@
 import React from 'react'
+import { CopyApp } from './CopyApp';
 
 function App() {
   return (
     <div>
-      <h1>
-        Soy App
-      </h1>
+      <CopyApp/>
     </div>
   )
 }
